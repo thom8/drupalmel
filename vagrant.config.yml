@@ -20,5 +20,10 @@ install_site: true
 apache_vhosts:
   - {servername: "{{ drupal_domain }}", documentroot: "{{ drupal_core_path }}"}
 
-# Add any extra packages you'd like to install.
-extra_packages: [ 'unzip' ]
+# Composer config
+composer_home_path: /home/vagrant/.composer
+composer_global_packages:
+  - { name: behat/mink, release: '1.5.*@stable' }
+  - { name: behat/mink-goutte-driver, release: '*' }
+  - { name: behat/mink-selenium2-driver, release: '*' }
+  - { name: drupal/drupal-extension, release: '*' }
