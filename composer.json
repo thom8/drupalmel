@@ -1,5 +1,15 @@
 {
     "require-dev": {
-        "alexdesignworks/dcr": "0.0.*"
+        "alexdesignworks/dcr": "0.0.*",
+        "drush/drush": "^8.1"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "if [ ! -d 'docroot' ] ; then vendor/bin/drush make stub.make docroot ; fi"
+        ],
+        "post-update-cmd": [
+            "rm -rf docroot",
+            "vendor/bin/drush make stub.make docroot"
+        ]
     }
 }

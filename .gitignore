@@ -6,6 +6,7 @@ modules/*
 tests/behat/vendor
 themes/*
 !themes/custom
+vendor/
 
 
 
